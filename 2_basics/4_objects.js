@@ -53,9 +53,30 @@ const users = [
 // console.log(tinderUser.hasOwnProperty("isLoggedIn")); // this method is used to return a boolean indicating whether the object has the specified property as its own property (as opposed to inheriting it). It returns true if the object has the specified property as its own property, and false otherwise.
 
 
+// destructuring of objects
 const course = {
     coursename: "js in hindi",
     price: "999",
     courseInstructor: "hitesh"
 }
 console.log(course);
+const {coursename, price, courseInstructor} = course; // this is the destructuring of objects. It is used to extract the values of the properties of an object and assign them to variables. The variables must have the same name as the properties of the object. It is a convenient way to extract multiple properties from an object and assign them to variables in a single statement.
+console.log(courseInstructor);
+const { courseInstructor: instructor} = course; // this is the destructuring of objects. It is used to extract the values of the properties of an object and assign them to variables. The variables must have the same name as the properties of the object. It is a convenient way to extract multiple properties from an object and assign them to variables in a single statement.
+console.log(coursename);
+console.log(price);
+console.log(instructor);
+
+// react props destructuring
+// const navbar = ({ company }) => {
+// }
+// navbar( company= "hitesh" )
+
+
+// API JSON 
+// {
+//     "coursename": "js in hindi",
+//     "price": "free",
+//     "courseInstructor": "hitesh"
+// }
+
