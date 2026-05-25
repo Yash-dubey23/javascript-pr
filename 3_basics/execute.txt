@@ -1,0 +1,10 @@
+Java Execution context 
+
+divide in
+Global E  C   in insepct it gives windoes
+Function E  C  
+Eval E  C  
+
+
+{}  --.> Memory 
+    --.> Execute phase
