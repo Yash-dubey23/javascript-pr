@@ -4,12 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dom learning</title>
+    <style>
+    .bg-black{
+        background-color: black;
+        color: white;
+        padding: 20px;
+    }
+    </style>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading"> DOM learning on chai aur code</h1>
+<body class="bg-black">
+    <div >
+        <h1  id="title" class="heading">DOM learning on Chai aur code <span style="display: none;">test text</span></h1>
         <p> This is a simple paragraph for DOM learning.</p>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+
+        <ul>
+            <li class="list-item">one</li>
+            <li class="list-item">two</li>
+            <li class="list-item">three</li>
+            <li class="list-item">four</li>
+        </ul>
     </div>
-    
+     
 </body>
 </html>
+
+
+<!-- const text = document.getElementById("title").innerText
+console.log(text) -->
+
+<!-- innerText
+        Sirf visible text return karta hai
+CSS ka effect maanta hai (display:none wala text ignore karega)
+Formatting ko respect karta hai -->
+
+<!-- textContent -->
+<!-- Sare text ko return karta hai
+CSS ka effect nahi maanta hai (display:none wala text bhi return karega)
+Formatting ko respect nahi karta hai (line break ignore karega) -->
+
+<!-- innerHTML -->
+<!-- HTML content ko return karta hai
+CSS ka effect nahi maanta hai
+Formatting ko respect karta hai -->
+
+
+<!-- queryselector -->
+ <!-- 
+| Selector               | Meaning        |
+| ---------------------- | -------------- |
+| `"h1"`                 | tag            |
+| `"#id"`                | id             |
+| `".class"`             | class          |
+| `"div p"`              | inside div     |
+| `"input[type='text']"` | specific input |
+
+
+| Method               | Returns                          |
+| -------------------- | -------------------------------- |
+| `querySelector()`    | First matching element           |
+| `querySelectorAll()` | All matching elements (NodeList) |
+-->
+
+
+
+<!-- 
+-> DOM[All Document elements are objects in javascript] 
+    -> window is a global object which contains document object
+    -> console.dir(document) gives the document object as it is
+    -> document.baseURI - give the base url
+    -> document.getElementById() - used to select the element with id
+
+    -> targeting the elements [elements ko catch karna]
+    -> document.getElementByClassName() //returns HTML collection
+
+    -> element.className - gives the class name [used in react]
+    -> element.id = gives the id
+    -> element.getAttribute('att_name')
+    -> element.setAttribute('att_name','att_value') - overwrites the pre-existing attribute
+    -> element.style.color = 'red'
+
+    -> element.textContent =  gives the display:none element too
+    -> element.innerText = does not give the display:none elements
+    -> element.innerHTML = gives the html too
+
+    -> element.querySelector('any') = it can take any selector like we give in css
+    -> We can also use querySelector or any selecting method on any element which contains some child nodes
+    -> We can use forEach on NodeList which comes from querySelectorAll()
+    -> NODELIST AND HTML COLLECTION are not pure arrays but nodelist has forEach() method
+    -> Html collection do not have forEach() so it needs to be converted to array first
+    -> Both nodelist & htmlcollection can be converted into array by using Array.from(nodeList/HtmlCollection) -->
+
+    <!--  const text = document.querySelectorAll("li")
+console.log(text)
+
+
+
+
+﻿
+const myh1=document.querySelectorAll("h1")
+undefined
+myh1
+NodeList [h1#title.heading]
+myh1[2].style.color="green"
+VM1037:1 Uncaught TypeError: Cannot read properties of undefined (reading 'style')
+    at <anonymous>:1:9
+myh1[0].style.color="green"-->
+
+
+
+<!-- text.forEach(function (l) {
+    l.style.backgroundColor="green"
+})
+ -->
+
+
+ <!-- document.getElementsByClassName("list-item") -->
+
+<!-- 
+ | Name               | Yaad Rakho        |
+| ------------------ | ----------------- |
+| `innerText`        | Visible text      |
+| `textContent`      | All text          |
+| `innerHTML`        | HTML content      |
+| `querySelector`    | First element     |
+| `querySelectorAll` | All elements      |
+| `NodeList`         | `forEach()` works |
+| `HTMLCollection`   | Convert first     | 
+
+
+| Topic                | Purpose                              | Example                             |
+| -------------------- | ------------------------------------ | ----------------------------------- |
+| `innerText`          | Visible text get/set                 | `element.innerText = "Hello"`       |
+| `textContent`        | All text get/set                     | `element.textContent`               |
+| `innerHTML`          | HTML content get/set                 | `element.innerHTML = "<h1>Hi</h1>"` |
+| `querySelector()`    | First matching element select        | `document.querySelector(".box")`    |
+| `querySelectorAll()` | All matching elements select         | `document.querySelectorAll(".box")` |
+| `NodeList`           | Collection from `querySelectorAll()` | Supports `forEach()`                |
+| `HTMLCollection`     | Collection from `getElementsBy...`   | No direct `forEach()`               |
+-->
+
+
+
+<!-- 
+ const text = document.querySelectorAll("li")
+console.log(text)
+VM1677:2 NodeList(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+undefined
+myConvertedArray=Array.from(text);
+(4) [li.list-item, li.list-item, li.list-item, li.list-item]
+myConvertedArray.forEach(function (li) {
+    li.style.color="orange"
+})
+undefined -->
