@@ -1,0 +1,47 @@
+javascript is synchronous or single threaded(slow)
+
+execution context :-----
+          execute one line o code at a time
+          console by1
+          console by 2
+
+          call stack    memory heaop
+
+
+
+blocking code:=+
+         block the flow of program
+         read file synchronous
+
+
+non blocking code
+         de+oes not block execution
+         read file async
+
+
+JS Engine
+CALL STACK
+fn
+fn
+Global
+A
+*
+And to CALL
+Stack
+...
+Async v
+call
+High Priority
+CB
+Event Loop
+Web API
+DOM API
+> Set timeout
+Set interval
+fetch()
+CB
+CB
+task Queue
+Asyn
+Promise
+Regi
